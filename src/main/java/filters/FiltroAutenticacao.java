@@ -2,15 +2,14 @@ package filters;
 
 import java.util.concurrent.TimeUnit;
 
-public class ProcessingFilter implements  Filter{
+public class FiltroAutenticacao implements Filtro {
 
     @Override
-    public void execute(ContextFilter contexto) {
-
-        System.out.println("---------------- FILTRO DE PROCESSAMENTO ---------------");
+    public void execute(FiltroContexto contexto) {
+        System.out.println("---------------- FILTRO DE AUTENTICAÇÃO ---------------");
 
         try {
-            System.out.print("PROCESSANDO");
+            System.out.print("Autenticando");
             TimeUnit.MILLISECONDS.sleep(500);
             System.out.print(".");
             TimeUnit.MILLISECONDS.sleep(500);
@@ -19,14 +18,10 @@ public class ProcessingFilter implements  Filter{
             System.out.println(".");
             System.out.println("/*----------------------------------------------------------*/");
 
+            contexto.autenticar(true);
         } catch (InterruptedException e) {
             System.out.print("erro");
         }
-
-        if (contexto.isAuthenticated() && contexto.isValidated()) {
-            System.out.println("Pedido processado com sucesso!");
-        } else {
-            System.out.println("Pedido inválido. Não foi possível processar.");
-        }
     }
 }
+

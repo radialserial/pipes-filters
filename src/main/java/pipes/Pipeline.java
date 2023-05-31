@@ -1,23 +1,20 @@
 package pipes;
 
-import filters.*;
+import filters.Filtro;
+import filters.FiltroContexto;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Pipeline {
-    private List<Filter> filtros;
 
-    public Pipeline() {
-        filtros = new ArrayList<>();
-        // Adicione os filtros específicos do comércio eletrônico ao pipeline
-        filtros.add(new AuthenticationFilter());
-        filtros.add(new ValidationFilter());
-        filtros.add(new ProcessingFilter());
+    private final List<Filtro> filtros;
+
+    public Pipeline(List<Filtro> filtros) {
+        this.filtros = filtros;
     }
 
-    public void executarPipeline(ContextFilter contexto) {
-        for (Filter filtro : filtros) {
+    public void executarPipeline(FiltroContexto contexto) {
+        for (Filtro filtro : filtros) {
             filtro.execute(contexto);
         }
     }

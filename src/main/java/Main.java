@@ -1,14 +1,22 @@
-import entities.Order;
-import filters.ContextFilter;
+import entities.Pedido;
+import filters.*;
 import pipes.Pipeline;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        Pipeline pipeline = new Pipeline();
+        List<Filtro> filtros = new ArrayList<>();
+        filtros.add(new FiltroAutenticacao());
+        filtros.add(new FiltroValidacao());
+        filtros.add(new FiltroProcesso());
 
-        ContextFilter contexto = new ContextFilter();
-        contexto.setOrder(new Order(
+        Pipeline pipeline = new Pipeline(filtros);
+
+        FiltroContexto contexto = new FiltroContexto();
+        contexto.setContexto(new Pedido(
                 "test_id",
                 "mock_buyer",
                 "mock_product"
