@@ -1,7 +1,7 @@
 package pipes;
 
-import filters.Filtro;
-import filters.FiltroContexto;
+import filtros.Contexto;
+import filtros.Filtro;
 
 import java.util.List;
 
@@ -13,9 +13,10 @@ public class Pipeline {
         this.filtros = filtros;
     }
 
-    public void executarPipeline(FiltroContexto contexto) {
+    public void executarPipeline(Contexto contexto) {
         for (Filtro filtro : filtros) {
             filtro.execute(contexto);
         }
+        System.out.println("Filtragem completa.");
     }
 }

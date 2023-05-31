@@ -1,6 +1,6 @@
-package filters;
+package filtros;
 
 // Interface para um filtro genérico
 public interface Filtro {
-    void execute(FiltroContexto contexto);
+    void execute(Contexto contexto);
 }
