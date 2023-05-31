@@ -1,8 +1,0 @@
-filters\AuthenticationFilter.class
-Main.class
-pipes\Pipeline.class
-filters\ProcessingFilter.class
-entities\Order.class
-filters\ContextFilter.class
-filters\Filter.class
-filters\ValidationFilter.class
