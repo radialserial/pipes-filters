@@ -1,5 +1,8 @@
 package entidades;
 
+/**
+ * Cores disponíveis na oficina de bicicletas.
+ */
 public enum Cores {
     VERMELHO,
     AZUL,
