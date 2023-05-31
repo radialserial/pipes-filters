@@ -13,11 +13,8 @@ public class FiltroIdValido implements Filtro {
 
         System.out.println("Checando ID...");
 
-        if (bike.id().length() != 4) {
-            throw new RuntimeException("ID Inválido.");
-        }
+        contexto.validarId(bike.id().length() == 4);
 
-        System.out.println("ID Válido.\n");
 
     }
 }

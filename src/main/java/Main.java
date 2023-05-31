@@ -13,11 +13,12 @@ public class Main {
         filtros.add(new FiltroIdValido());
         filtros.add(new FiltroDonoValido());
         filtros.add(new FiltroCorValida());
+        filtros.add(new FiltroBikeValida());
 
         Pipeline pipeline = new Pipeline(filtros);
 
         Contexto contexto = new Contexto(new Bike(
-                "0451",
+                "451",
                 "Jubileu",
                 "Vermelho"
         ));

@@ -13,11 +13,8 @@ public class FiltroDonoValido implements Filtro {
 
         System.out.println("Checando nome do dono...");
 
-        if (bike.dono() == null) {
-            throw new RuntimeException("Bike sem dono");
-        }
+        contexto.donoValido(bike.dono() != null);
 
-        System.out.println("Dono encontrado.\n");
 
     }
 }

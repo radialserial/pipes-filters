@@ -20,10 +20,7 @@ public class FiltroCorValida implements Filtro {
             if (bike.cor().toUpperCase().equals(cor.toString())) corValida = true;
         }
 
-        if (!corValida) throw new RuntimeException("Cor inválida.");
-
-
-        System.out.println("Cor válida.\n");
+        contexto.validarCor(corValida);
 
     }
 }
